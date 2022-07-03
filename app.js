@@ -8,7 +8,7 @@ const twitterBtn = document.querySelector(".twitter")
 const synth = document.querySelector(".sound")
 const API_URL = "https://animechan.vercel.app/api/random"
 
-quoteBtn.addEventListener("click", randomQuote);
+
 
 
 function randomQuote() {
@@ -25,3 +25,14 @@ function randomQuote() {
         });
 }
 
+speechBtn.addEventListener("click", () => {
+    if (!quoteBtn.classList.contains("loading")) {
+        let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
+        synth.speak(utterance);
+        setInterval(() => {
+            !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
+        }, 10);
+    }
+});
+
+quoteBtn.addEventListener("click", randomQuote);
