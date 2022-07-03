@@ -27,14 +27,14 @@ body {
 
 .wrapper header {
   text-align: center;
-  font-size: calc(30 / 16 * 1rem);
+  font-size: calc(32 / 16 * 1rem);
   font-weight: 600;
-  color: #ffffffe3;
+  color: #ffffffd9;
 }
 
 .wrapper .content {
   margin: 35px 0;
-  color: #ffffffe3;
+  color: #ffffffd9;
 }
 
 .content .quote-area {
@@ -96,12 +96,12 @@ body {
   width: 47px;
   display: flex;
   cursor: pointer;
-  color: #ffffffe3;
+  color: #ffffffd9;
   list-style: none;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  border: 2px solid #ffffffe3;
+  border: 2px solid #ffffffd9;
   transition: all 0.3s ease;
 }
 
@@ -118,15 +118,14 @@ ul .speech.active {
 }
 
 .buttons button {
-  border: none;
-  color: #ffffffe3;
+  color: #ffffffdc;
   outline: none;
   font-size: 1rem;
   cursor: pointer;
   padding: 13px 22px;
   border-radius: 30px;
   background: none;
-  border: 2px solid #ffffffe3;
+  border: 2px solid #ffffffd9;
   transition: all 0.3s ease;
 }
 
@@ -137,4 +136,76 @@ ul .speech.active {
 .buttons button.loading {
   opacity: 0.7;
   pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .wrapper {
+    width: 450px;
+  }
+
+  .wrapper header {
+    font-size: calc(25 / 16 * 1rem);
+  }
+
+  .quote-area i {
+    font-size: calc(13 / 16 * 1rem);
+  }
+
+  .quote-area .quote {
+    font-size: calc(18 / 16 * 1rem);
+  }
+
+  .content .author {
+    font-size: 1rem;
+  }
+
+  .features ul li {
+    border: 1px solid #ffffffd9;
+    height: 40px;
+    width: 40px;
+    font-size: calc(15 / 16 * 1rem);
+  }
+
+  .buttons button {
+    font-size: calc(14 / 16 * 1rem);
+    padding: 8px 20px;
+    border: 1px solid #ffffffd9;
+  }
+}
+
+@media (max-width: 415px) {
+  .wrapper header {
+    font-size: calc(20 / 16 * 1rem);
+  }
+
+  .wrapper .content {
+    margin: 15px 0 20px 0;
+  }
+
+  .quote-area i {
+    font-size: calc(12 / 16 * 1rem);
+  }
+
+  .quote-area .quote {
+    font-size: 1rem;
+  }
+
+  .content .author {
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .features ul li {
+    height: 35px;
+    width: 35px;
+    font-size: calc(13 / 16 * 1rem);
+  }
+
+  .buttons button {
+    padding: 7px 14px;
+    font-size: calc(13 / 16 * 1rem);
+  }
 }
