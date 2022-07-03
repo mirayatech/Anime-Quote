@@ -23,14 +23,9 @@ function randomQuote() {
 }
 
 speechBtn.addEventListener("click", () => {
-    if (!quoteBtn.classList.contains("loading")) {
-        let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText}`);
-        synth.speak(utterance);
-        setInterval(() => {
-            !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
-        }, 10);
-    }
-});
+    let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText} by ${authorName.innerText} from ${animeName.innerText}`)
+    speechSynthesis.speak(utterance)
+})
 
 copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(quoteText.innerText);
