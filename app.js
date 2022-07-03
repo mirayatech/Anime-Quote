@@ -8,13 +8,20 @@ const twitterBtn = document.querySelector(".twitter")
 const synth = document.querySelector(".sound")
 const API_URL = "https://animechan.vercel.app/api/random"
 
+quoteBtn.addEventListener("click", randomQuote);
+
 
 function randomQuote() {
+    quoteBtn.classList.add("loading");
+    quoteBtn.innerText = "Loading Quote...";
     fetch(API_URL)
         .then(response => response.json())
         .then(result => {
-            console.log(result)
+            quoteText.innerText = result.quote;
+            authorName.innerText = result.character;
+            animeName.innerText = ` (${result.anime})`;
+            quoteBtn.classList.remove("loading");
+            quoteBtn.innerText = "New Quote";
         });
 }
 
-randomQuote()
